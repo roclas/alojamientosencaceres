@@ -744,10 +744,15 @@
         Alojamiento único en el casco histórico<br />
         Patrimonio de la Humanidad
       </p>
-      <a href="#apartamentos" class="btn-primary">
-        Ver apartamentos
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="#reservas" class="btn-primary">
+          Reservar ahora
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#apartamentos" class="btn-secondary">
+          Ver apartamentos
+        </a>
+      </div>
     </div>
 
     <div class="hero-scroll">
@@ -837,14 +842,9 @@
     <p class="reservas-sub">Motor de reservas directo — sin comisiones, sin plataformas</p>
 
     <div class="booking-wrapper">
-      <!-- Smoobu widget goes here -->
-      <div id="smoobu-booking-widget">
-        <!-- Activar pegando el código:
-        <div id="apartmentIframeAll">
+      <div id="apartmentIframeAll">
         <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
-        </div>
-        -->
-        <span>Motor de reservas — próximamente</span>
+        <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/es/booking-tool/iframe/16342", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframeAll"})</script>
       </div>
     </div>
   </section>
