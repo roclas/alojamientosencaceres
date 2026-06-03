@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alojamientos en Cáceres | Apartamentos en el Casco Histórico</title>
+  <meta name="description" content="Apartamentos turísticos en el corazón de Cáceres, Patrimonio de la Humanidad. Reserva directa sin intermediarios. Arco del Cristo y Loft Arco del Cristo." />
+  <meta name="keywords" content="apartamentos Cáceres, alojamiento Cáceres, casco histórico Cáceres, apartamento turístico Cáceres, Arco del Cristo" />
+  <link rel="canonical" href="https://www.alojamientosencaceres.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terra:        #B0522A;
+      --terra-light:  #C97B53;
+      --terra-dark:   #7A3418;
+      --cream:        #F3E9D8;
+      --cream-light:  #FBF7F1;
+      --sand:         #E2D0B8;
+      --stone:        #9A8B7E;
+      --stone-dark:   #5C5048;
+      --ink:          #261912;
+      --gold:         #C8A46A;
+      --gold-light:   #E2C99A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--cream-light);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(38, 25, 18, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 164, 106, 0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(243, 233, 216, 0.7);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* ── HERO ── */
+    #inicio {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/loft-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.55);
+    }
+
+    /* Stone-block texture via repeating gradient */
+    .hero-texture {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(243,233,216,0.6) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(243,233,216,0.6) 80px);
+    }
+
+    .hero-arch {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(600px, 80vw);
+      height: min(450px, 60vw);
+      border: 1px solid rgba(200, 164, 106, 0.18);
+      border-bottom: none;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      pointer-events: none;
+    }
+
+    .hero-arch-inner {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(420px, 60vw);
+      height: min(310px, 42vw);
+      border: 1px solid rgba(200, 164, 106, 0.12);
+      border-bottom: none;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: rgba(243, 233, 216, 0.6);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 2.25rem;
+      background: var(--terra);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--terra-light);
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: var(--terra-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(176, 82, 42, 0.4);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(243, 233, 216, 0.35);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(200,164,106,0.5));
+      animation: scrollpulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollpulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 7rem 2rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--terra);
+      opacity: 0.5;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    /* ── APARTMENTS ── */
+    #apartamentos {
+      background: var(--cream-light);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .apartments-header {
+      margin-bottom: 4rem;
+    }
+
+    .apartments-intro {
+      font-size: 1rem;
+      color: var(--stone-dark);
+      max-width: 480px;
+      line-height: 1.8;
+    }
+
+    /* The grid: auto-fit means 2 cards now, gracefully expands to 3-4 */
+    .apartments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      gap: 2rem;
+    }
+
+    .apt-card {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s;
+    }
+
+    .apt-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(38, 25, 18, 0.15);
+    }
+
+    .apt-image {
+      height: 280px;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .apt-card:nth-child(1) .apt-image {
+      background-image: url('images/arco-hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apt-card:nth-child(2) .apt-image {
+      background-image: url('images/loft-hero.jpg');
+      background-size: cover;
+      background-position: center 40%;
+    }
+
+    /* Extra cards get default gradient */
+    .apt-card:nth-child(n+3) .apt-image {
+      background:
+        linear-gradient(160deg, #5C4030 0%, #8B6248 50%, #C4956A 100%);
+    }
+
+    /* Decorative arch on card image */
+    .apt-image::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 80px;
+      border: 1px solid rgba(243, 233, 216, 0.2);
+      border-bottom: none;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+
+    .apt-image-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(243, 233, 216, 0.9);
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .apt-body {
+      padding: 1.75rem;
+    }
+
+    .apt-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .apt-tagline {
+      font-size: 0.85rem;
+      color: var(--stone);
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .apt-amenities {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .apt-amenity {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--stone-dark);
+      letter-spacing: 0.04em;
+    }
+
+    .apt-amenity svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--terra);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .apt-capacity {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terra-dark);
+      background: rgba(176, 82, 42, 0.1);
+      border: 1px solid rgba(176, 82, 42, 0.2);
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--terra);
+      color: var(--terra);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--terra);
+      color: var(--cream);
+    }
+
+    /* ── RESERVAS ── */
+    #reservas {
+      background: var(--ink);
+      text-align: center;
+    }
+
+    #reservas .section-label { justify-content: center; }
+    #reservas .section-label::after { display: none; }
+    #reservas .section-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--terra);
+      opacity: 0.5;
+    }
+
+    #reservas .section-title { color: var(--cream); }
+
+    .reservas-sub {
+      font-size: 0.9rem;
+      color: rgba(243, 233, 216, 0.5);
+      letter-spacing: 0.06em;
+      margin-bottom: 3rem;
+    }
+
+    .booking-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid rgba(200, 164, 106, 0.2);
+      padding: 3rem;
+      background: rgba(243, 233, 216, 0.03);
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(243, 233, 216, 0.2);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── CÁCERES ── */
+    #caceres {
+      background: var(--sand);
+    }
+
+    .caceres-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .caceres-text p {
+      font-size: 1rem;
+      color: var(--stone-dark);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    .caceres-text p:last-child { margin-bottom: 0; }
+
+    .caceres-map {
+      position: relative;
+      height: 320px;
+      background: var(--cream);
+      border: 1px solid rgba(92, 80, 72, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Decorative map illustration with CSS */
+    .caceres-map::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(176, 82, 42, 0.06) 0%, transparent 70%);
+    }
+
+    .map-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image:
+        repeating-linear-gradient(0deg, var(--stone-dark) 0px, transparent 1px, transparent 39px, var(--stone-dark) 40px),
+        repeating-linear-gradient(90deg, var(--stone-dark) 0px, transparent 1px, transparent 39px, var(--stone-dark) 40px);
+    }
+
+    .map-pin {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .map-pin-dot {
+      width: 14px;
+      height: 14px;
+      background: var(--terra);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(176, 82, 42, 0.15);
+    }
+
+    .map-pin-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .map-pin-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* ── CONTACTO ── */
+    #contacto {
+      background: var(--cream-light);
+      text-align: center;
+    }
+
+    .contacto-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .contacto-desc {
+      font-size: 1rem;
+      color: var(--stone-dark);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .contacto-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 2rem;
+      background: #25D366;
+      color: white;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ab954;
+      transform: translateY(-2px);
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 2rem;
+      border: 1px solid var(--stone);
+      color: var(--stone-dark);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+
+    .btn-email:hover {
+      border-color: var(--terra);
+      color: var(--terra);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: rgba(243, 233, 216, 0.3);
+    }
+
+    footer a {
+      color: rgba(200, 164, 106, 0.5);
+      text-decoration: none;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: rgba(243, 233, 216, 0.5);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── DIVIDER ── */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem 0 2.5rem;
+      color: var(--gold);
+      font-size: 0.9rem;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+      opacity: 0.35;
+    }
+
+    .ornament::after {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+
+      .nav-links {
+        display: none; /* Mobile: hamburger would go here */
+      }
+
+      .caceres-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      section { padding: 5rem 1.25rem; }
+
+      .booking-wrapper { padding: 2rem 1.25rem; }
+
+      #reservas, #caceres { padding: 5rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#inicio" class="nav-logo">ALO<span>·</span></a>
+    <ul class="nav-links">
+      <li><a href="#apartamentos">Apartamentos</a></li>
+      <li><a href="#reservas">Reservas</a></li>
+      <li><a href="#caceres">Cáceres</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-texture"></div>
+    <div class="hero-arch"></div>
+    <div class="hero-arch-inner"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Cáceres · España</p>
+      <h1 class="hero-title">
+        Apartamentos en el<br />
+        <em>Corazón de Cáceres</em>
+      </h1>
+      <p class="hero-subtitle">
+        Alojamiento único en el casco histórico<br />
+        Patrimonio de la Humanidad
+      </p>
+      <a href="#apartamentos" class="btn-primary">
+        Ver apartamentos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Descubrir</span>
+    </div>
+  </section>
+
+  <!-- APARTAMENTOS -->
+  <section id="apartamentos">
+    <div class="apartments-header">
+      <p class="section-label">Nuestros espacios</p>
+      <h2 class="section-title">Nuestros Apartamentos</h2>
+      <p class="apartments-intro">
+        Dos apartamentos cuidados hasta el último detalle, situados en pleno casco histórico. Cada uno con su propio carácter, ambos con la misma atención al huésped.
+      </p>
+    </div>
+
+    <!-- GRID: auto-fit, scales naturally to 3-4 cards with no changes -->
+    <div class="apartments-grid">
+
+      <!-- ARCO DEL CRISTO -->
+      <article class="apt-card">
+        <div class="apt-image">
+          <span class="apt-image-name">Arco del Cristo</span>
+        </div>
+        <div class="apt-body">
+          <h3 class="apt-name">Arco del Cristo</h3>
+          <p class="apt-tagline">Casa del año 1900 completamente restaurada, junto a la puerta de entrada más antigua a la ciudad monumental. Primera planta con escaleras de piedra natural y vistas a la ciudad y la montaña.</p>
+          <span class="apt-capacity">Hasta 4 personas</span>
+          <div class="apt-amenities">
+            <span class="apt-amenity">
+              <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+              2 hab. dobles · 55 m²
+            </span>
+            <span class="apt-amenity">
+              <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+              WiFi · A/C · Calefacción
+            </span>
+            <span class="apt-amenity">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Balcón · Cocina equipada
+            </span>
+          </div>
+          <a href="#reservas" class="btn-secondary">
+            Ver disponibilidad →
+          </a>
+        </div>
+      </article>
+
+      <!-- LOFT ARCO DEL CRISTO -->
+      <article class="apt-card">
+        <div class="apt-image">
+          <span class="apt-image-name">Loft Arco del Cristo</span>
+        </div>
+        <div class="apt-body">
+          <h3 class="apt-name">Loft Arco del Cristo</h3>
+          <p class="apt-tagline">Loft recién reformado a 80 metros del Arco del Cristo. Planta baja con entrada privada, suelos de baldosa, ambiente tranquilo y todo lo necesario para una estancia perfecta.</p>
+          <span class="apt-capacity">Hasta 3 personas</span>
+          <div class="apt-amenities">
+            <span class="apt-amenity">
+              <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+              1 dormitorio · Salón
+            </span>
+            <span class="apt-amenity">
+              <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+              WiFi · A/C · Insonorizado
+            </span>
+            <span class="apt-amenity">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Entrada privada · Lavadora
+            </span>
+          </div>
+          <a href="#reservas" class="btn-secondary">
+            Ver disponibilidad →
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section id="reservas">
+    <p class="section-label">Sin intermediarios</p>
+    <h2 class="section-title">Reserva tu Estancia</h2>
+    <p class="reservas-sub">Motor de reservas directo — sin comisiones, sin plataformas</p>
+
+    <div class="booking-wrapper">
+      <!-- Smoobu widget goes here -->
+      <div id="smoobu-booking-widget">
+        <!-- Activar pegando el código:
+        <div id="apartmentIframeAll">
+        <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+        </div>
+        -->
+        <span>Motor de reservas — próximamente</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÁCERES -->
+  <section id="caceres">
+    <div class="caceres-inner">
+      <div class="caceres-text">
+        <p class="section-label">La ciudad</p>
+        <h2 class="section-title">Cáceres,<br />Ciudad Monumental</h2>
+        <div class="ornament">✦</div>
+        <p>Cáceres es una de las ciudades medievales mejor conservadas de Europa. Su casco histórico, declarado Patrimonio de la Humanidad por la UNESCO en 1986, guarda siglos de historia entre torres, palacios y callejuelas empedradas.</p>
+        <p>Pasear por sus calles al atardecer, con las piedras de granito encendiéndose en tonos dorados, es una experiencia que no se olvida. Nuestros apartamentos están en el corazón de esa historia.</p>
+      </div>
+      <div class="caceres-map">
+        <div class="map-grid"></div>
+        <div class="map-pin">
+          <div class="map-pin-dot"></div>
+          <span class="map-pin-label">Cáceres</span>
+          <span class="map-pin-sub">Casco Histórico · UNESCO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contacto-inner">
+      <p class="section-label">Hablemos</p>
+      <h2 class="section-title">¿Tienes alguna pregunta?</h2>
+      <p class="contacto-desc">
+        Estamos aquí para ayudarte a encontrar el alojamiento perfecto en Cáceres. Escríbenos por WhatsApp o email y te respondemos enseguida.
+      </p>
+      <div class="contacto-actions">
+        <a href="https://wa.me/34607397934" class="btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:info@aloapartamentos.es" class="btn-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">ALO APARTAMENTOS</div>
+    <p>© 2026 Alo Apartamentos · Cáceres, España · <a href="https://wa.me/34607397934">+34 607 397 934</a></p>
+  </footer>
+
+</body>
+</html>
