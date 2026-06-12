@@ -135,16 +135,17 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--cream);
+      display: flex;
+      align-items: center;
       text-decoration: none;
+      line-height: 0;
     }
 
-    .nav-logo span {
-      color: var(--gold);
+    .nav-logo img {
+      height: 42px;
+      width: auto;
+      display: block;
+      border-radius: 6px;
     }
 
     .nav-links {
@@ -865,7 +866,9 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.25rem; }
+      nav { padding: 0.75rem 1.25rem; }
+
+      .nav-logo img { height: 34px; }
 
       .nav-links {
         display: none; /* Mobile: hamburger would go here */
@@ -889,7 +892,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#inicio" class="nav-logo">Alojamientos<span>·</span></a>
+    <a href="#inicio" class="nav-logo"><img src="images/logo-alojamientos.jpg" alt="Alojamientos en Cáceres" /></a>
     <ul class="nav-links">
       <li><a href="#reservas">Reservas</a></li>
       <li><a href="#apartamentos">Apartamentos</a></li>
